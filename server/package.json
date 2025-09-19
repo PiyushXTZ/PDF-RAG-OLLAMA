@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "dev:worker": "node --watch worker.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.2",
+    "@langchain/community": "^0.3.40",
+    "@langchain/core": "^0.3.44",
+    "@langchain/openai": "^0.5.5",
+    "@langchain/qdrant": "^0.1.2",
+    "@langchain/textsplitters": "^0.1.0",
+    "@qdrant/js-client-rest": "^1.15.1",
+    "@xenova/transformers": "^2.17.2",
+    "axios": "^1.12.0",
+    "bullmq": "^5.49.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "4.x",
+    "langchain": "^0.3.21",
+    "multer": "1.4.5-lts.2",
+    "mysql2": "^3.14.5",
+    "openai": "^4.94.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "qdrant-client": "^0.0.1",
+    "sharp": "0.33.4",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "4.x",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.14.1"
+  }
+}
