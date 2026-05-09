@@ -6,17 +6,17 @@ import { QdrantVectorStore } from "@langchain/qdrant";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
-const REDIS_HOST = process.env.REDIS_HOST || "localhost";
+const REDIS_HOST = process.env.REDIS_HOST || "redis";
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 
 const OLLAMA_BASE_URL =
-  process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+  process.env.OLLAMA_BASE_URL || "http://host.docker.internal:11434";
 
 const OLLAMA_EMBED_MODEL =
   process.env.OLLAMA_EMBED_MODEL || "nomic-embed-text";
 
 const QDRANT_URL =
-  process.env.QDRANT_URL || "http://localhost:6333";
+  process.env.QDRANT_URL || "http://qdrant:6333";
 
 const QDRANT_COLLECTION =
   process.env.QDRANT_COLLECTION || "langchain-ollama-docs";

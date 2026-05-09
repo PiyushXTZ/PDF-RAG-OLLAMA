@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+
+  frontend:
+    build: ./pdfrag
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - qdrant
+    volumes:
+    - ./server/uploads:/app/uploads
+
+  worker:
+    build: ./server
+    command: npm run dev:worker
+    depends_on:
+      - redis
+      - qdrant
+    volumes:
+    - ./server/uploads:/app/uploads
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+

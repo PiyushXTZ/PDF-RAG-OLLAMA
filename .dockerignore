@@ -1,0 +1,12 @@
+node_modules
+.git
+.next
+.turbo
+uploads
+server/uploads
+qdrant_storage
+dist
+build
+coverage
+*.log
+.env

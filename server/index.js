@@ -11,15 +11,15 @@ import { QdrantVectorStore } from "@langchain/qdrant";
 
 const PORT = process.env.SERVER_PORT || 8000;
 
-const REDIS_HOST = process.env.REDIS_HOST || "localhost";
+const REDIS_HOST = process.env.REDIS_HOST || "redis";
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 
-const QDRANT_URL = process.env.QDRANT_URL || "http://localhost:6333";
+const QDRANT_URL = process.env.QDRANT_URL || "http://qdrant:6333";
 
 const QDRANT_COLLECTION =
   process.env.QDRANT_COLLECTION || "langchain-ollama-docs";
 
-const OLLAMA_BASE_URL = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+const OLLAMA_BASE_URL = process.env.OLLAMA_BASE_URL || "http://host.docker.internal:11434";
 
 const OLLAMA_EMBED_MODEL =
   process.env.OLLAMA_EMBED_MODEL || "nomic-embed-text";
@@ -80,6 +80,7 @@ const embeddings = new OllamaEmbeddings({
 const vectorStore = new QdrantVectorStore(embeddings, {
   url: QDRANT_URL,
   collectionName: QDRANT_COLLECTION,
+  checkCompatibility: false,
 });
 
 /* =========================================
@@ -413,5 +414,5 @@ ANSWER:
 ========================================= */
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
