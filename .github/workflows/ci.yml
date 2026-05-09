@@ -23,12 +23,12 @@ jobs:
       - name: Install Backend Dependencies
         run: |
           cd server
-          npm install
+          npm install --legacy-peer-deps
 
       - name: Install Frontend Dependencies
         run: |
           cd pdfrag
-          npm install
+          npm install --legacy-peer-deps
 
       - name: Build Frontend
         run: |
