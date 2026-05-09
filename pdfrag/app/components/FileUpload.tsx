@@ -31,7 +31,7 @@ export default function FileUpload() {
     setMessage('Uploading file...');
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/upload/pdf`, {
+      const res = await fetch(`http://localhost:8000/upload/pdf`, {
         method: 'POST',
         body: formData,
       });

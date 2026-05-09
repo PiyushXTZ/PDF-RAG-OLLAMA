@@ -1,0 +1,39 @@
+# dependencies
+node_modules/
+
+# env files
+.env
+.env.local
+.env.*
+
+# uploads
+uploads/
+server/uploads/
+
+# next build
+.next/
+out/
+
+# logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# vscode
+.vscode/
+
+# qdrant storage
+qdrant_storage/
+
+# build files
+dist/
+build/
+
+# turbopack
+.turbo/
+
+# coverage
+coverage/
